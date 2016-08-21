@@ -37,11 +37,15 @@ test_color = "b"
 ### Please name it reg, so that the plotting code below picks it up and 
 ### plots it correctly. Don't forget to change the test_color above from "b" to
 ### "r" to differentiate training points from test points.
-
-
-
-
-
+from sklearn import linear_model
+reg = linear_model.LinearRegression()
+reg.fit(feature_train,target_train)
+accu = reg.score(feature_train,target_train)
+accu_test = reg.score(feature_test,target_test)
+print "slope = ", reg.coef_
+print "intercept =", reg.intercept_
+print "accuracy =", accu 
+print "accuracy_test =", accu_test
 
 
 
@@ -64,6 +68,9 @@ try:
     plt.plot( feature_test, reg.predict(feature_test) )
 except NameError:
     pass
+reg.fit(feature_test,target_test)
+print "slope_train_data=", reg.coef_
+plt.plot(feature_train,reg.predict(feature_train),color='r')
 plt.xlabel(features_list[1])
 plt.ylabel(features_list[0])
 plt.legend()

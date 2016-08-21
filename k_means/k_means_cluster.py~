@@ -97,7 +97,7 @@ for users in data_dict:
     so = data_dict[users]['salary']
     if so =="NaN":
         continue
-    salary.append(so)
+    salary.append(so)3
 
 print "max_salary=", max(salary)
 print "min_salary=", min(salary)

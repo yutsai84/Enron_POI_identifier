@@ -60,4 +60,4 @@ for i in range(len(importances)):
         #the output is 33614,0.76
 
 #print which feature cause the problem
-        print "the features cause the problem: ", vectorizer.get_feature_names()[i]
+        print "the features cause the problem: "vectorizer.get_feature_names()[i]
